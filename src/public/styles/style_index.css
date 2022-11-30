@@ -1,0 +1,89 @@
+/* Estilo de la imagen principal de la página del index*/
+.imagen_principal{
+    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../img/imagen_portada.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    background-attachment: fixed;
+}
+
+.contenedor_menu{
+    width: 100%;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+/* Posicion izquierda del menú que se encuentra encima de la imagen principal*/
+.menu_posicionizquierda{
+    grid-column: 1;
+}
+.menu_posicionizquierda ul{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    padding-left: 25px;
+}
+.letrasmenu_izquierdo a{
+    text-decoration: none;
+    font-family: 'Road Rage', cursive !important;
+    font-size: 70px;
+    color: #f0f0f0;
+}
+.letrasmenu_izquierdo a:hover{
+    color: #00ffff;
+}
+
+
+/* Posición derecha del menú que se encuentra por encima de la foto de la imagen principal*/
+.menu_posicionderecha{
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    color: #f0f0f0;
+}
+.posderecha_iniciar{
+    grid-row: 2;
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+}
+.posderecha_iniciar h3{
+    display: block;
+}
+.posderecha_iniciar a{
+    margin-top: 15px;
+    width: max-content;
+    text-decoration: none;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    padding: 15px;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+.menu_posicionderecha a:hover{
+    background-color: #00ffff;
+}
+
+.posderecha_colaborador{
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    grid-row: 3;
+}
+
+.posderecha_colaborador a{
+    margin-top: 15px;
+    width: max-content;
+    text-decoration: none;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    padding: 15px;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+.posderecha_colaborador a:hover{
+    background-color: #00ffff;
+}

@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* Estilo de la barra de navegacion que se va a encontrar en el header principal que todos
+pueden visualizar */
+.content_navbar{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.content_navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content_navbar ul li{
+    list-style: none;
+    align-items: center;
+}
+
+.content_navbar ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+.content_navbar ul .navbar_logo{
+    /* flex: 1;*/
+}
+
+.navbar_logo a{
+    font-family: 'Road Rage', cursive !important;
+    font-size: 50px !important;
+}
+.navbar_logo a img{
+    width: 170px;
+}
+.content_navbar ul li{
+    padding: 15px;
+}
+.content_navbar ul li a{
+    text-decoration: none;
+}
