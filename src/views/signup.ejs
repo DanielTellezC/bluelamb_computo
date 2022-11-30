@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style_header.css">
+    <link rel="stylesheet" href="styles/style_signup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap" rel="stylesheet">
     <title>Signup</title>
 </head>
-<body>
-    <div class="fondo_signup">
-        <div class="contenedor_signup">
-            <div class="signup_izquierdo">
-                <div class="signup_logo">
-                    <h1>Blue lamb</h1>
-                    <h2>Disfruta la vida</h2>
-                </div>
-                <form action="" method="post" class="signup_formato">
-                    <ul>
-                        <li class="signup_datos"><input type="text" name="email" id="" placeholder="Correo"></li>
-                        <li class="signup_datos"><input type="text" name="password" id="" placeholder="Contraseña"></li>
-                        <li class="signup_datos"><input type="text" name="name" id="" placeholder="Nombre"></li>
-                        <li class="signup_datos"><input type="text" name="phone" id="" placeholder="Número de teléfono"></li>
-                        <li class="signup_datos"><input type="text" name="cuenta" id="" placeholder="Tipo de cuenta"></li>
-                    </ul>
-                </form>
-            </div>
-            <div class="signup_derecho">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias enim similique aliquam! Eius minima tempore unde assumenda, nobis suscipit nam optio perferendis facilis eos amet molestiae. Omnis, ex. Labore, quam.</p>
-            </div>
+<body> 
+    <div class="contenedor_signup">
+        <div class="signup_logo">
+            <a href="/"><img src="img/logo_small.png" alt=""></a>
+            <h2>Sign up</h2>
         </div>
+        <form action="/signup" method="post" class="signup_formato">
+            <ul>
+                <li class="signup_datos"><input type="text" name="email" id="" placeholder="Correo" required></li>
+                <li class="signup_datos"><input type="text" name="password" id="" placeholder="Contraseña" required></li>
+                <li class="signup_datos"><input type="text" name="name" id="" placeholder="Nombre" required></li>
+                <li class="signup_datos"><input type="text" name="phone" id="" placeholder="Número de teléfono" required></li>
+                <li class="signup_datos"><input type="text" name="cuenta" id="" placeholder="Tipo de cuenta" required></li>
+            </ul>
+            <button type="submit">Signup</button>
+        </form>
     </div>
+
 </body>
 </html>
