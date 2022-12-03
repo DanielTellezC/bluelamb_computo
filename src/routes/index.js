@@ -50,12 +50,26 @@ router.get('/profile', isAuthenticated, (req,res, next) =>{
     res.render('profile');
 });
 
+router.get("/edit_profile/:id", async(req, res, next) =>{
+    const User = await user.findById(req.params.id).lean();
+    res.render("edit_profile", { User });
+    
+});
+router.post("/edit_profile/:id", async(req, res, next) =>{
+    const { id } = req.params;
+    console.log('Esta es lo que arroja', req.body);
+    await user.findByIdAndUpdate(id, req.body);
+    res.redirect('/profile');
+});
+
+/* Editar la información del usuario */
 function isAuthenticated(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
     res.redirect('/');
 };
+
 
 // Tareas
 router.get('/tasks', isAuthenticated, lectura_task , async(req, res, next) =>{

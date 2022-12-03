@@ -1,0 +1,13 @@
+<%- layout('layouts/main.ejs') %>
+<div class="fondo_update">
+    <form class="update_profile" action="/edit_profile/<%=User._id%>" method="post">
+        <h2>Actualizar datos de usuario</h2>
+        <ul>
+            <li class="list_update"><label for="">Nombre del usuario: </label><input type="text" name="name" value="<%= User.name %>"></li>
+            <li class="list_update"><label for="">Email:</label><input type="text" name="email" value="<%= User.email %>"></li>
+            <li class="list_update"><label for="">Teléfono:</label><input type="text" name="phone" value="<%= User.phone %>"></li>
+            <li class="list_update"><label for="">Contraseña:</label><input type="text" name="password" value="<%= User.password %>"></li>       
+        </ul>
+        <button type="submit">Actualizar</button>
+    </form>
+</div>
