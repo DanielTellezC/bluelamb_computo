@@ -1,0 +1,7 @@
+.cuerpo_productos{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    min-height: 100%;
+    background-color: #f1fa31;
+}

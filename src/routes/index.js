@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const Task = require('../models/Tasks');
 const user = require("../models/user");
+const articulo = require('../models/articulo');
 
 // Ruta raíz
 router.get('/', (req, res, next) => {
@@ -80,6 +81,10 @@ router.post('/administrar_usuario/:id', async(req, res, next) =>{
     res.redirect('/administrar_usuarios');
 });
 
+router.get('/agregar_articulo', async(req, res, next) =>{
+    res.render("agregar_articulo");
+});
+
 router.get('/delete/:id', async(req, res, next) => {
     
     const { id } = req.params;
@@ -94,21 +99,6 @@ function isAuthenticated(req, res, next){
     }
     res.redirect('/');
 };
-
-async function isAdministrador(req, res, next){
-    const { id } = req.params;
-    console.log({ id });
-    const id_us = await user.findById(id, req.body);
-    console.log(id_us);
-    if(id_us === '638ac3864fdee392bfafe5de'){
-        return next()
-    }
-    res.redirect('/');
-}
-
-router.get('/usuarios', isAdministrador ,(req, res, next) =>{
-    res.send('Hola, tengo el control sobre todos ustedes');
-});
 
 
 // Tareas
