@@ -12,6 +12,7 @@
     width: 1050px;
     height: 500px;
     background-color: #ffffff;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -4,11 +4,20 @@
     font-family: Helvetica, arial, sans-serif ,Source Sans Pro;
 }
 .mensaje_signup{
+    width: 100%;
     background-color: rgba(255, 0, 0, 50%);
     text-align: center;
     padding: 10px;
-    margin: 10px;
     color: #ffffff;
     border-radius: 5px;
-
+    position: absolute;
+}
+.mensaje_signin{
+    width: 100%;
+    background-color: rgba(255, 0, 0, 50%);
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+    position: absolute;
 }

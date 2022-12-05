@@ -1,0 +1,23 @@
+<%- layout('layouts/main.ejs') %>
+<div class="cuerpo_administrar_usuarios">
+
+    <div class="contenedor_administrar_usuarios">
+        <% User.forEach(function(user){ %>
+        <div class="tarjeta_administrar_usuarios">
+            <div class="descripcion_administrar_usuarios">
+                    <p><%= user.name %> </p>  
+                    <p><%= user.phone %> </p>
+                    <p><%= user.status %> </p>
+                    <p><%= user.cuenta %> </p>
+            </div>
+            <div class="acciones_administrar_usuarios">
+                <a href="/administrar_usuario/<%=user._id%>"> <span class="material-symbols-outlined">edit</span> </a>
+                <a href="/delete/<%= user._id %>"><span class="material-symbols-outlined">delete</span> </a>
+                
+            </div>
+        </div>
+        <% }); %>
+    </div>
+
+    
+</div>

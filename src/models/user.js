@@ -30,6 +30,12 @@ const userSchema = new Schema({
         unique: false,
         trim: true
     },
+    status:{
+        type: String,
+        require: false,
+        unique: false,
+        trim: true
+    },
     cuenta:{
         type: String,
         require: true,

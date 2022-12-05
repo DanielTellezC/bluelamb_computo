@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style_signup.css">
+    <link rel="stylesheet" href="styles/style_alertas.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +13,10 @@
     <title>Signup</title>
 </head>
 <body> 
+    <% if(signinMensaje.length > 0){ %>
+        <div class="mensaje_signin"><b><%= signinMensaje %></b></div>
+    <% } %>
+
     <div class="contenedor_signup">
         <div class="signup_logo">
             <a href="/"><img src="img/logo_small.png" alt=""></a>
@@ -19,7 +24,7 @@
         </div>
         <form action="/signin" method="post" class="signup_formato">
             <ul>
-                <li class="signup_datos"><input type="text" name="email" id="" placeholder="Correo" required></li>
+                <li class="signup_datos"><input type="email" name="email" id="" placeholder="Correo" required></li>
                 <li class="signup_datos"><input type="password" name="password" id="" placeholder="Contraseña" required></li>
             </ul>
             <button type="submit">Signup</button>

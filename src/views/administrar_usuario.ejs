@@ -1,0 +1,21 @@
+<%- layout('layouts/main.ejs') %>
+
+<div class="body_administrar_usuario">
+    <div class="card_administrar_usuario">
+        <form action="/administrar_usuario/<%= User._id %>" class="form_administrar_usuario" method="post">
+            <div class="header_card_administrar_usuario">
+                <h2>Este es el usuario: <%= User.name %></h2>
+                <h3>Su status es: <%= User.status %></h3>
+                <h3>es una cuenta de tipo: <%= User.cuenta %></h3>
+            </div>
+            <div class="body_card_administrar_usuario">
+                <label for="status_user">Status de la cuenta</label>
+                <input type="text" name="status" id="status_user" value="<%= User.status %>">
+                <label for="cuenta_user">Cuenta</label>
+                <input type="text" name="cuenta" id="cuenta_user" value="<%= User.cuenta %>">
+                <button type="submit">Actualizar</button>
+            </div>
+
+        </form>
+    </div>
+</div>

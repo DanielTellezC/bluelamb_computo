@@ -50,6 +50,7 @@ router.get('/profile', isAuthenticated, (req,res, next) =>{
     res.render('profile');
 });
 
+/* Editar la información del usuario */
 router.get("/edit_profile/:id", async(req, res, next) =>{
     const User = await user.findById(req.params.id).lean();
     res.render("edit_profile", { User });
@@ -62,13 +63,52 @@ router.post("/edit_profile/:id", async(req, res, next) =>{
     res.redirect('/profile');
 });
 
-/* Editar la información del usuario */
+/* Administracion de usuarios enndonde se va poder hacer un CRUD */
+router.get('/administrar_usuarios', async(req, res, next) =>{
+    const User = await user.find();
+    res.render('administrar_usuarios', { User });
+});
+
+router.get('/administrar_usuario/:id', async(req, res, next) =>{
+    const User = await user.findById(req.params.id).lean();
+    res.render("administrar_usuario", { User });
+});
+router.post('/administrar_usuario/:id', async(req, res, next) =>{
+    const { id } = req.params;
+    console.log('Esta es lo que arroja', req.body);
+    await user.findByIdAndUpdate(id, req.body);
+    res.redirect('/administrar_usuarios');
+});
+
+router.get('/delete/:id', async(req, res, next) => {
+    
+    const { id } = req.params;
+    console.log('Este es el que se borra:', req.body);
+    await user.findByIdAndDelete(id, req.body);
+    res.redirect('/administrar_usuarios');
+});
+/* Funciones de autenticación */ 
 function isAuthenticated(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
     res.redirect('/');
 };
+
+async function isAdministrador(req, res, next){
+    const { id } = req.params;
+    console.log({ id });
+    const id_us = await user.findById(id, req.body);
+    console.log(id_us);
+    if(id_us === '638ac3864fdee392bfafe5de'){
+        return next()
+    }
+    res.redirect('/');
+}
+
+router.get('/usuarios', isAdministrador ,(req, res, next) =>{
+    res.send('Hola, tengo el control sobre todos ustedes');
+});
 
 
 // Tareas

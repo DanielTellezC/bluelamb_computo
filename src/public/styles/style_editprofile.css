@@ -56,3 +56,9 @@
     color: #ffffff;
     font-size: large;
 }
+.update_profile h2{
+    width: 90%;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid #00ffff;
+}
