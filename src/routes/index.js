@@ -85,6 +85,25 @@ router.get('/agregar_articulo', async(req, res, next) =>{
     res.render("agregar_articulo");
 });
 
+router.post('/agregar_articulo', async(req, res, next) =>{
+    const articulonuevo = articulo(req.body);
+    const user = req.user.id;
+    articulonuevo.cuenta = user;
+    const save_articulo = await articulonuevo.save();
+    res.redirect('agregar_articulo');
+});
+
+////// ejemplo
+router.post('/tasks/add', async (req, res, next) => {
+    const task = Task(req.body);
+    const user = req.user.id;
+    task.cuenta = user;
+    const save_task = await task.save();
+    console.log(save_task);
+    res.redirect('/tasks');
+});
+//////
+
 router.get('/delete/:id', async(req, res, next) => {
     
     const { id } = req.params;

@@ -54,7 +54,11 @@ const userSchema = new Schema({
     imagen:{
         data: Buffer,
         contentType: String
-    }
+    },
+    cuenta:[{
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    }]
 },
     {
         timestamps: true,

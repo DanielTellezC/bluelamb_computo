@@ -1,4 +1,43 @@
 <%- layout('layouts/main.ejs') %>
 <div class="cuerpo_productos">
-    
+    <div class="contenedor_agregar_articulo">
+        <div class="header_agregar_articulo">
+            <h3>
+                Agregar un producto nuevo
+            </h3>
+        </div>
+        <form class="formulario_agregar_articulo" method="post" action="/agregar_articulo">
+            <div class="formmato_asd">
+                <label for="">Nombre del articulo:</label><input type="text" name="nombre_articulo" name="nombre_articulo" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Color del articulo:</label><input type="text" name="Color" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Tamaño:</label><input type="text" name="tamano" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Talla:</label><input type="text" name="talla" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Descripción:</label><input type="text" name="descripcion" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+               <label for="">Fabricante:</label><input type="text" name="fabricante" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Material:</label><input type="text" name="material" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Categoría:</label><input type="text" name="categoria" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Imagen del producto:</label><input name="imagen" type="file">
+            </div>
+            <div class="formmato_asd">
+                <button type="submit">Agregar</button>
+            </div>
+               
+        </form>
+    </div>
 </div>
