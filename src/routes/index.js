@@ -82,16 +82,18 @@ router.post('/administrar_usuario/:id', async(req, res, next) =>{
 });
 
 router.get('/agregar_articulo', async(req, res, next) =>{
-    res.render("agregar_articulo");
+    const Articulo = await articulo.find({ cuenta:req.user.id });
+    res.render("agregar_articulo", { Articulo });
 });
 
-router.post('/agregar_articulo', async(req, res, next) =>{
+router.post('/agregar_articulo', isAuthenticated, async(req, res, next) =>{
     const articulonuevo = articulo(req.body);
     const user = req.user.id;
     articulonuevo.cuenta = user;
     const save_articulo = await articulonuevo.save();
     res.redirect('agregar_articulo');
 });
+
 
 ////// ejemplo
 router.post('/tasks/add', async (req, res, next) => {

@@ -11,7 +11,7 @@
 /* Estilo de la barra de navegacion que se va a encontrar en el header principal que todos
 pueden visualizar */
 .content_navbar{
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
 }

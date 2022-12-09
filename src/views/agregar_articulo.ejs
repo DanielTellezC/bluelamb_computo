@@ -11,7 +11,10 @@
                 <label for="">Nombre del articulo:</label><input type="text" name="nombre_articulo" name="nombre_articulo" class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Color del articulo:</label><input type="text" name="Color" class="input_agregar_producto">
+                <label for="">Color del articulo:</label><input type="text" name="color" class="input_agregar_producto">
+            </div>
+            <div class="formmato_asd">
+                <label for="">Número de piezas:</label><input type="number" name="numpiezas" class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
                 <label for="">Tamaño:</label><input type="text" name="tamano" class="input_agregar_producto">
@@ -29,7 +32,15 @@
                 <label for="">Material:</label><input type="text" name="material" class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Categoría:</label><input type="text" name="categoria" class="input_agregar_producto">
+                <label for="cate">Categoría:</label>
+                <select name="categoria" class="input_agregar_producto" id="cate">
+                    <option value="">Jeans</option>
+                    <option value="">Playeras</option>
+                    <option value="">Sudaderas</option>
+                    <option value="">Chamarras</option>
+                    <option value="">Pants</option>
+                    <option value="">Accesorios</option>
+                </select>
             </div>
             <div class="formmato_asd">
                 <label for="">Imagen del producto:</label><input name="imagen" type="file">
@@ -40,4 +51,24 @@
                
         </form>
     </div>
+    <div class="cuerpo_de_articulos_guardados">
+        <% Articulo.forEach(function(articulo){ %>
+        <div class="tarjeta_articulo">
+            <div class="imagen_articulo">
+
+            </div>
+            <div class="datos_del_articulo">
+                <p>Nombre: <%= articulo.nombre_articulo %></p>
+                <p>Tamaño: <%= articulo.tamano %></p>
+                <p>Descripcion: <%= articulo.descripcion %></p>
+                <p>Talla: <%= articulo.talla %></p>
+                <p>Fabricante: <%= articulo.fabricante%></p>
+                <p>Color: <%= articulo.color%></p>
+                <p>Numero de piezas: <%= articulo.numpiezas%></p>
+            </div>
+            
+        </div> 
+        <% }); %>
+    </div>
+    
 </div>

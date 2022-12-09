@@ -51,6 +51,12 @@ const userSchema = new Schema({
         unique: false,
         trim: true
     },
+    numpiezas:{
+        type: String,
+        require: false,
+        unique: false,
+        trim: true
+    },
     imagen:{
         data: Buffer,
         contentType: String
