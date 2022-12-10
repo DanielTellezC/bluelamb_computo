@@ -81,7 +81,7 @@ router.post('/administrar_usuario/:id', async(req, res, next) =>{
     res.redirect('/administrar_usuarios');
 });
 
-router.get('/agregar_articulo', async(req, res, next) =>{
+router.get('/agregar_articulo', isAuthenticated, async(req, res, next) =>{
     const Articulo = await articulo.find({ cuenta:req.user.id });
     res.render("agregar_articulo", { Articulo });
 });
@@ -92,6 +92,18 @@ router.post('/agregar_articulo', isAuthenticated, async(req, res, next) =>{
     articulonuevo.cuenta = user;
     const save_articulo = await articulonuevo.save();
     res.redirect('agregar_articulo');
+});
+
+router.get('/delete_articulo/:id', async(req, res, next) =>{
+    const { id } = req.params;
+    console.log('Este es el que se borra:', req.body);
+    await articulo.findByIdAndDelete(id, req.body);
+    res.redirect('/agregar_articulo');
+});
+
+router.get('/editar_articulo/:id', async(req, res, next) =>{
+    const Articulo = await articulo.findById(req.params.id).lean();
+    res.render('editar_articulo', { Articulo });
 });
 
 
@@ -107,7 +119,6 @@ router.post('/tasks/add', async (req, res, next) => {
 //////
 
 router.get('/delete/:id', async(req, res, next) => {
-    
     const { id } = req.params;
     console.log('Este es el que se borra:', req.body);
     await user.findByIdAndDelete(id, req.body);

@@ -8,28 +8,28 @@
         </div>
         <form class="formulario_agregar_articulo" method="post" action="/agregar_articulo">
             <div class="formmato_asd">
-                <label for="">Nombre del articulo:</label><input type="text" name="nombre_articulo" name="nombre_articulo" class="input_agregar_producto">
+                <label for="">Nombre del articulo:</label><input type="text" name="nombre_articulo" name="nombre_articulo" required class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Color del articulo:</label><input type="text" name="color" class="input_agregar_producto">
+                <label for="">Color del articulo:</label><input type="text" name="color" required class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Número de piezas:</label><input type="number" name="numpiezas" class="input_agregar_producto">
+                <label for="">Número de piezas:</label><input type="number" name="numpiezas" required class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Tamaño:</label><input type="text" name="tamano" class="input_agregar_producto">
+                <label for="">Tamaño:</label><input type="text" name="tamano" required class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Talla:</label><input type="text" name="talla" class="input_agregar_producto">
+                <label for="">Talla:</label><input type="text" name="talla" required class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Descripción:</label><input type="text" name="descripcion" class="input_agregar_producto">
+                <label for="">Descripción:</label><input type="text" required name="descripcion" class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-               <label for="">Fabricante:</label><input type="text" name="fabricante" class="input_agregar_producto">
+               <label for="">Fabricante:</label><input type="text" required name="fabricante" class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
-                <label for="">Material:</label><input type="text" name="material" class="input_agregar_producto">
+                <label for="">Material:</label><input type="text" required name="material" class="input_agregar_producto">
             </div>
             <div class="formmato_asd">
                 <label for="cate">Categoría:</label>
@@ -65,6 +65,11 @@
                 <p>Fabricante: <%= articulo.fabricante%></p>
                 <p>Color: <%= articulo.color%></p>
                 <p>Numero de piezas: <%= articulo.numpiezas%></p>
+                <p><%= articulo._id%></p>
+            </div>
+            <div class="footer_del_articulo">
+                <a href="/editar_articulo/<%= articulo._id%>" class="button_edit"> <span class="material-symbols-outlined">edit</span> </a>
+                <a href="/delete_articulo/<%= articulo._id%>" class="button_delete"><span class="material-symbols-outlined">delete</span> </a>
             </div>
             
         </div> 
