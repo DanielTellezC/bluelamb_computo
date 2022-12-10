@@ -83,6 +83,7 @@
     padding: 25px;
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
 }
 .imagen_articulo{
     text-align: center;
