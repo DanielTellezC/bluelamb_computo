@@ -105,6 +105,12 @@ router.get('/editar_articulo/:id', async(req, res, next) =>{
     const Articulo = await articulo.findById(req.params.id).lean();
     res.render('editar_articulo', { Articulo });
 });
+router.post('/editar_articulo/:id', isAuthenticated, async(req, res, next) =>{
+    const { id } = req.params;
+    console.log('Esta es lo que arroja', req.body);
+    await articulo.findByIdAndUpdate(id, req.body);
+    res.redirect('/agregar_articulo');
+});
 
 
 ////// ejemplo
