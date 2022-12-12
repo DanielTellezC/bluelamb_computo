@@ -87,3 +87,74 @@
 .posderecha_colaborador a:hover{
     background-color: #00ffff;
 }
+
+.cuerpo_index{
+    background-color: #f1f1f1;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cuerpo_tarjetas{
+    width: 100%;
+    height: fit-content;
+    padding: 25px;
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: 25rem;
+    grid-template-columns: repeat(auto-fill , minmax(15rem, 1fr));
+}
+
+.tarjeta_articulo_venta{
+    border: 1px solid #a1a1a1;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-rows: 45% 40% 15%;
+}
+.imagen_tarjeta_venta{
+    text-align: center;
+    grid-row: 1;
+    background-color: purple;
+}
+.informacion_tarjeta_venta{
+    grid-row: 2;
+    overflow: auto;
+    background-color: pink;
+}
+.botones_tarjeta_venta{
+    grid-row: 3;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.botones_tarjeta_venta button{
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    background-color: #00ff00;
+    color: #ffffff;
+}
+.botones_tarjeta_venta button:hover{
+    background-color: #55ff55;
+}
+.informacion_tarjeta_venta::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .informacion_tarjeta_venta::-webkit-scrollbar-track {
+    background: #e1e1e1;
+  }
+  
+  .informacion_tarjeta_venta::-webkit-scrollbar-thumb {
+    background-color: #00ffff;
+    border-radius: 20px;
+
+  }

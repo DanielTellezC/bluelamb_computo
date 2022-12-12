@@ -6,8 +6,9 @@ const user = require("../models/user");
 const articulo = require('../models/articulo');
 
 // Ruta raíz
-router.get('/', (req, res, next) => {
-    res.render('index');
+router.get('/', async(req, res, next) => {
+    Articulo = await articulo.find();
+    res.render('index', { Articulo });
 });
 
 // Signup registro de usuarios
@@ -110,6 +111,11 @@ router.post('/editar_articulo/:id', isAuthenticated, async(req, res, next) =>{
     console.log('Esta es lo que arroja', req.body);
     await articulo.findByIdAndUpdate(id, req.body);
     res.redirect('/agregar_articulo');
+});
+
+//// Carrito de compras
+router.get('/carrito', async(req, res, next) =>{
+    res.render('carrito');
 });
 
 

@@ -78,7 +78,7 @@
     grid-template-columns: repeat(auto-fill , minmax(15rem, 1fr));
 }
 .tarjeta_articulo{
-    border: 2px solid #a1a1a1;
+    border: 1px solid #a1a1a1;
     border-radius: 15px;
     padding: 25px;
     display: flex;

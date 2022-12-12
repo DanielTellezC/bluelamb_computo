@@ -19,7 +19,7 @@
     <div class="contenedor_signup">
         <div class="signup_logo">
             <a href="/"><img src="img/logo_small.png" alt=""></a>
-            <h2>Crear cuenta de comprador</h2>
+            <h2>Elija su tipo de cuenta</h2>
         </div>
         <form action="/signup" method="post" class="signup_formato">
             <ul>
@@ -27,7 +27,13 @@
                 <li class="signup_datos"><input type="password" name="password" id="" placeholder="Contraseña" required></li>
                 <li class="signup_datos"><input type="text" name="name" id="" placeholder="Nombre" required></li>
                 <li class="signup_datos"><input type="text" name="phone" id="" placeholder="Número de teléfono" required></li>
-                <li class="signup_datos"><input type="text" name="cuenta" id="" placeholder="Tipo de cuenta" required></li>
+                <li class="signup_datos"> 
+                    <select name="cuenta" id="">
+                        <option value="Usuario">Comprador</option>
+                        <option value="Vendedor">Vendedor</option>
+                    </select>
+                </li>
+                
             </ul>
             <button type="submit">Signup</button>
         </form>

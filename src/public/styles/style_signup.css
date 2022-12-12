@@ -62,6 +62,16 @@ body{
 .signup_datos input:focus{
     outline: 2px solid #00ffff;
 }
+.signup_datos select{
+    width: 250px;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+.signup_datos select:focus{
+    outline: 2px solid #00ffff;
+}
 .signup_formato button{
     margin: 15px;
     padding: 15px;
