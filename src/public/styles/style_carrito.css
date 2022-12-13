@@ -21,3 +21,11 @@
     align-items: center;
     padding: 25px;
 }
+.recuadro_carrito{
+    width: 90%;
+    border-bottom: 1px solid #00ffff;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

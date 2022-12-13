@@ -1,6 +1,19 @@
 <%- layout('layouts/main.ejs') %>
 <div class="cuerpo_carrito">
     <div class="carta_carrito">
-        
+        <% Carrito.forEach(function(carrito){ %>
+            <div class="recuadro_carrito">
+                <div class="descripcion_carrito">
+                    <p>Nombre del articulo: <%= carrito.nombre_articulo %></p>
+                    <p>Descripción del articulo: <%= carrito.descripcion %></p>
+                </div>
+                <div class="accioneoes_carrito">
+                    <a href="/borrar_carrito/<%= carrito._id %>"><span class="material-symbols-outlined">delete</span> </a>
+                </div>
+                
+
+            </div>
+            
+        <% }); %>
     </div>
 </div>

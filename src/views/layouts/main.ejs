@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap" rel="stylesheet">
+    <script src="html2pdf.bundle.min.js"></script>
+    <script src="../javaScript/pdf.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -36,7 +38,7 @@
     <% } %>
 
     <!-- Menú que se muestra para los usuarios administrador -->
-    <% if(user){ %>
+    <% if(user && user.cuenta == 'Administrador'){ %>
     <div class="content_navbar">
         <ul>
             <li class="navbar_logo"><a href="/"><img src="../img/logo_small.png" alt=""></a></li>
@@ -45,12 +47,48 @@
             <li class="navbar_link"><a href="/">Index</a></li>
             <li class="navbar_link"><a href="/profile">Perfil</a></li>
             <li class="navbar_link"><a href="/agregar_articulo">Agregar articulo</a></li>
+            <li class="navbar_link"><a href="/carrito">Carrito</a></li>
             <li class="navbar_link"><a href="/logout">Cerrar Sesión</a></li>
             
         </ul>
         
     </div>
     <% } %>
+
+    <% if(user && user.cuenta == 'Usuario'){ %>
+
+        <div class="content_navbar">
+            <ul>
+                <li class="navbar_logo"><a href="/"><img src="../img/logo_small.png" alt=""></a></li>
+                <li class="navbar_menu"><a href=""><span class="material-symbols-outlined">menu</span></a></li>
+                <li class="navbar_link"><a href="/">Index</a></li>
+                <li class="navbar_link"><a href="/profile">Perfil</a></li>
+                <li class="navbar_link"><a href="/carrito">Carrito</a></li>
+                <li class="navbar_link"><a href="/logout">Cerrar Sesión</a></li>
+                
+            </ul>
+            
+        </div>
+
+    <% } %>
+
+    <% if(user && user.cuenta == 'Vendedor'){ %>
+
+        <div class="content_navbar">
+            <ul>
+                <li class="navbar_logo"><a href="/"><img src="../img/logo_small.png" alt=""></a></li>
+                <li class="navbar_menu"><a href=""><span class="material-symbols-outlined">menu</span></a></li>
+                <li class="navbar_link"><a href="/">Index</a></li>
+                <li class="navbar_link"><a href="/profile">Perfil</a></li>
+                <li class="navbar_link"><a href="/agregar_articulo">Agregar articulo</a></li>
+                <li class="navbar_link"><a href="/logout">Cerrar Sesión</a></li>
+                
+            </ul>
+            
+        </div>
+
+    <% } %>
+
 <!--Mensaje de error de signup para ver si ya se encuentra registrado el ususario--> 
     <% if(signupMensaje.length > 0){ %>
         <div class="mensaje_signup"><b><%= signupMensaje %></b></div>
@@ -62,8 +100,9 @@
 
     <%- body %>
 
-<!--
+
         
-<script src="javaScript/navbar.js"></script>
+<script src="../javaScript/navbar.js"></script>
+<!--
 </body>
 </html>

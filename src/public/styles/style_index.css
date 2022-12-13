@@ -119,12 +119,12 @@
 .imagen_tarjeta_venta{
     text-align: center;
     grid-row: 1;
-    background-color: purple;
+    
 }
 .informacion_tarjeta_venta{
     grid-row: 2;
     overflow: auto;
-    background-color: pink;
+    
 }
 .botones_tarjeta_venta{
     grid-row: 3;

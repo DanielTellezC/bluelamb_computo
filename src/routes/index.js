@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const passport = require('passport');
-const Task = require('../models/Tasks');
 const user = require("../models/user");
 const articulo = require('../models/articulo');
+const carrito = require('../models/carrito');
 
 // Ruta raíz
 router.get('/', async(req, res, next) => {
@@ -114,8 +114,23 @@ router.post('/editar_articulo/:id', isAuthenticated, async(req, res, next) =>{
 });
 
 //// Carrito de compras
-router.get('/carrito', async(req, res, next) =>{
-    res.render('carrito');
+router.get('/carrito', isAuthenticated ,async(req, res, next) =>{
+    const Carrito = await carrito.find({ cuenta:req.user.id });
+    res.render('carrito', { Carrito });
+});
+
+router.post('/agregar_carrito', async(req, res, next) => {
+    const carritonuevo = carrito(req.body);
+    const user = req.user.id;
+    carritonuevo.cuenta = user;
+    await carritonuevo.save();
+    res.redirect('carrito');
+});
+router.get('/borrar_carrito/:id', async(req,res,next) =>{
+    const { id } = req.params;
+    console.log('Este es el que se borra:', req.body);
+    await carrito.findByIdAndDelete(id, req.body);
+    res.redirect('/carrito');
 });
 
 

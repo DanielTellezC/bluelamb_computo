@@ -15,12 +15,16 @@
 
         <div class="menu_posicionderecha">
             <div class="posderecha_iniciar">
+                <% if(!user){ %>
                 <h3>Crear cuenta de usuario</h3>
                 <a href="">crear cuenta</a>
+                <% } %>
             </div>
             <div class="posderecha_colaborador">
+                <% if(!user) { %>
                 <h3>Crear cuenta de colaborador</h3>
                 <a href="">crear cuenta de colaborador</a>
+                <% } %>
             </div>
         </div>
     </div>
@@ -30,19 +34,32 @@
 <div class="cuerpo_index">
     <div class="cuerpo_tarjetas">
         <% Articulo.forEach(function(articulo){ %>
-            <div class="tarjeta_articulo_venta">
+            
+            <form action="/agregar_carrito" class="tarjeta_articulo_venta" method="post">
                 <div class="imagen_tarjeta_venta">
                     <img src="" alt="imagen de venta">
                 </div>
                 <div class="informacion_tarjeta_venta">
+
                     <h3><%= articulo.nombre_articulo %></h3>
+                    <input type="text" hidden name="nombre_articulo" value="<%= articulo.nombre_articulo %>">
                     <p><%= articulo.descripcion %></p>
+                    <input type="text" hidden name="descripcion" value="<%= articulo.descripcion %>">
                     <p><%= articulo.color%></p>
+                    <input type="text" hidden name="cantidad" value="<%=articulo.numpiezas%>">
                 </div>
                 <div class="botones_tarjeta_venta">
-                    <button>Agregar al carrito</button>
+                    
+                        <% if(user){ %>
+                        <button type="submit">Agregar al carrito</button>
+                        <% } %>
+                    
+                    <% if(!user){ %>
+                        <a href="/signup"><button>Iniciar sesión</button></a>
+                    <%} %>
                 </div>
-            </div>    
+            </form>
+               
             <% }) %>
     </div>
     
