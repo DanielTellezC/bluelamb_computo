@@ -29,3 +29,13 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.crear_pdf{
+    text-decoration: none;
+    padding: 25px;
+    background-color: #00ff00;
+    border-radius: 15px;
+    margin: 15px;
+    color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+}

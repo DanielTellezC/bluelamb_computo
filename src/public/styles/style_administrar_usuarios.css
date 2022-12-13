@@ -33,6 +33,10 @@
 .acciones_administrar_usuarios{
     color: #00ffff;
 }
+.acciones_administrar_usuarios a{
+    text-decoration: none;
+    color: #00ffff;
+}
 
 /*
 .contenedor_administrar_usuarios{
