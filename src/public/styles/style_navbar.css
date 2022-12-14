@@ -33,7 +33,9 @@ pueden visualizar */
 .content_navbar ul .navbar_logo{
     /* flex: 1;*/
 }
-
+.navbar_menu{
+    display: none;
+}
 .navbar_logo a{
     font-family: 'Road Rage', cursive !important;
     font-size: 50px !important;
@@ -46,4 +48,21 @@ pueden visualizar */
 }
 .content_navbar ul li a{
     text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .content_navbar ul{
+        flex-wrap: wrap;
+    }
+    .navbar_menu{
+        display: block;
+    }
+    .navbar_link{
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    .active{
+        display: block;
+    }
 }
