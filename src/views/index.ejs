@@ -16,15 +16,12 @@
         <div class="menu_posicionderecha">
             <div class="posderecha_iniciar">
                 <% if(!user){ %>
-                <h3>Crear cuenta de usuario</h3>
-                <a href="">crear cuenta</a>
+                <h3>Crear cuenta</h3>
+                <a href="/signup">crear cuenta</a>
                 <% } %>
             </div>
             <div class="posderecha_colaborador">
-                <% if(!user) { %>
-                <h3>Crear cuenta de colaborador</h3>
-                <a href="">crear cuenta de colaborador</a>
-                <% } %>
+                
             </div>
         </div>
     </div>
@@ -55,7 +52,7 @@
                         <% } %>
                     
                     <% if(!user){ %>
-                        <a href="/signup"><button>Iniciar sesión</button></a>
+                        <a href="/signin" class="iniciar_sesion">Iniciar sesión</a>
                     <%} %>
                 </div>
             </form>

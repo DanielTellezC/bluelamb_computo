@@ -145,7 +145,7 @@ router.post('/tasks/add', async (req, res, next) => {
 });
 //////
 
-router.get('/delete/:id', async(req, res, next) => {
+router.get('/delete/:id', isAuthenticated,async(req, res, next) => {
     const { id } = req.params;
     console.log('Este es el que se borra:', req.body);
     await user.findByIdAndDelete(id, req.body);

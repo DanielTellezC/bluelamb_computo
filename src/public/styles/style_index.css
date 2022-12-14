@@ -145,6 +145,14 @@
 .botones_tarjeta_venta button:hover{
     background-color: #55ff55;
 }
+.iniciar_sesion{
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #00ff00;
+    color: #ffffff;
+    font-weight: bold;
+}
 .informacion_tarjeta_venta::-webkit-scrollbar {
     width: 5px;
   }
