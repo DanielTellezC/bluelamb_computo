@@ -53,9 +53,11 @@ pueden visualizar */
 @media (max-width: 600px) {
     .content_navbar ul{
         flex-wrap: wrap;
+        
     }
     .navbar_menu{
         display: block;
+        
     }
     .navbar_link{
         display: none;
